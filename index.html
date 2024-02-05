@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500&display=swap"
+        rel="stylesheet">
+    <style>
+        html,
+        body,
+        div {
+            margin-top: 0;
+            padding: 0;
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+
+        body {
+            background-color: #07153a;
+            font-family: 'Bricolage Grotesque';
+        }
+
+        /* .personal-website {
+    background-color: #07153a;
+    color: #8fbdd9;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    position: relative;
+    width: 130%;
+    left: -15%;
+} */
+
+        p {
+            color: #8fbdd9;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            text-decoration-color: #8fbdd9;
+        }
+
+        #boxcontainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .box {
+            width: 100%;
+            height: 360px;
+            background-color: #3498db;
+            color: #ffffff;
+            margin: auto;
+            position: relative;
+        }
+
+        .landscape {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: inline-block;
+            margin: 0;
+            background-color: beige;
+
+        }
+
+        .landscape img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+        }
+
+        .profile-pic {
+            display: block;
+            outline-style: solid;
+            outline-color: #07153a;
+            outline-width: 1vh;
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            overflow: hidden;
+            background-color: #15205b;
+            position: absolute;
+            transform: translate(25%, -50%);
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .name {
+            position: absolute;
+            top: 375px;
+            left: 250px;
+            color: #8fbdd9;
+            font-size: 36px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .lower-name {
+            position: absolute;
+            top: 37px;
+            left: -10px;
+            color: #8fbdd9;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .navbar {
+            border-top: 2.4px solid #8fbdd9;
+            /* Top border */
+            border-bottom: 2.4px solid #8fbdd9;
+            /* Bottom border */
+            padding: 10px;
+            /* Add padding for content */
+            width: 98.5%;
+            position: relative;
+            top: 32%;
+            left: -2.0%;
+            display: flex;
+            justify-content: space-around;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .navbar div:hover {
+            background-color: #15205b;
+        }
+
+        .navbar div.active {
+            background-color: #15205b;
+        }
+
+        .navbar div {
+            flex: 1;
+            cursor: pointer;
+            padding: 8px 16px;
+            color: #ffffff;
+            border-radius: 5px;
+            transition: background-color 0.5 ease;
+        }
+
+        .facebook {
+            background-color: #07153a;
+            position: absolute;
+            top: 117%;
+            left: 84%;
+            transform: translateY(-50%);
+            text-align: center;
+            height: 40px;
+            width: 40px;
+            align-content: center;
+            overflow: hidden;
+        }
+
+        .facebook img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .instagram {
+            background-color: #07153a;
+            position: absolute;
+            top: 117%;
+            left: 91%;
+            transform: translateY(-50%);
+            text-align: center;
+            height: 40px;
+            width: 40px;
+            overflow: hidden;
+        }
+
+        .instagram img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tab-content {
+            position: absolute;
+            top: 150%;
+            transition: transform 0.5s ease;
+        }
+
+        #home-content {
+            color: #8fbdd9;
+        }
+
+        #steamgamesheading {
+            color: #8fbdd9;
+        }
+
+        .steamgames {
+            display: flex;
+            position: absolute;
+        }
+
+        .lethalcomp {
+            position: relative;
+            background-color: #8fbdd9;
+            width: 500px;
+            height: 250px;
+            text-align: center;
+        }
+
+        .lethalcomp img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #lethaltext {
+            font-size: 20px;
+            color: #8fbdd9;
+        }
+
+        .dontstarve {
+            position: relative;
+            background-color: #8fbdd9;
+            width: 500px;
+            height: 250px;
+            text-align: center;
+        }
+
+        #dontstarvetext {
+            font-size: 20px;
+            color: #8fbdd9;
+        }
+
+        .dontstarve img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .epicgames {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        #epicgamesheading {
+            position: absolute;
+            left: -0.5px;
+            top: 435px;
+            color: #8fbdd9;
+        }
+
+        .thehunter {
+            position: absolute;
+            background-color: #8fbdd9;
+            width: 440px;
+            height: 250px;
+            top: 500px;
+            left: 20px;
+            text-align: center;
+        }
+
+        .thehunter img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #thehuntertext {
+            color: #8fbdd9;
+            font-size: 20px;
+        }
+
+        .humanresourcemachine {
+            position: absolute;
+            background-color: #8fbdd9;
+            width: 440px;
+            height: 250px;
+            top: 500px;
+            left: 500px;
+            text-align: center;
+        }
+
+        .humanresourcemachine img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #humanresourcetext {
+            color: #8fbdd9;
+            font-size: 20px;
+        }
+
+        #personalid {
+            font-weight: bold;
+            font-size: 23px;
+        }
+
+        #educationalbg {
+            font-weight: bold;
+            font-size: 23px;
+        }
+
+        #hobbies {
+            font-weight: bold;
+            font-size: 23px;
+        }
+
+        #interests {
+            font-weight: bold;
+            font-size: 23px;
+        }
+
+        .favchars {
+            position: relative;
+            right: 19px;
+        }
+
+        .lucyimg {
+            background-color: black;
+            height: 300px;
+            width: 500px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 2%);
+            overflow: hidden;
+        }
+
+        .lucyimg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .davidimg {
+            background-color: black;
+            height: 300px;
+            width: 500px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 2%);
+            overflow: hidden;
+        }
+
+        .davidimg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Personal Website Header (optional) 
+        <div class="personal-website">PERSONAL WEBSITE</div> -->
+    <div id="boxcontainer">
+        <div class="box">
+            <div class="landscape">
+                <img src="https://images2.alphacoders.com/133/1330457.jpeg" alt="landscapepicture">
+            </div>
+            <div class="profile-pic">
+                <img src="https://cdn.discordapp.com/attachments/1201041430727102494/1201544214782156910/image_auto_x2.jpg?ex=65ca3440&is=65b7bf40&hm=06ac49aa5a1cc2d3e737dbea8fba0eb7d3d4cc44761b8300f76675bb1083ae95&"
+                    alt="Profile Picture">
+            </div>
+            <div class="name">Barrameda, Nathan Anjelo A.
+                <div class="lower-name">
+                    12 - Trustworthy ICT
+                </div>
+            </div>
+            <a href="https://www.instagram.com/nathanjelo/" target="_blank" class="instagram">
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png" />
+            </a>
+            <a href="https://www.facebook.com/nathan.barrameda.7" target="_blank" class="facebook">
+                <img
+                    src="https://cdn.discordapp.com/attachments/1043106313699348534/1201041301504790628/image_2024-01-28_134500306.png?ex=65c85fe0&is=65b5eae0&hm=44dd76092d9633b9fd9aaa9363b739d7afcb75d7e6cc57539b1d0a78c055526e&" />
+            </a>
+            <div class="navbar">
+                <div class="home-tab" onclick="showContent('home', event)" style="color: #8fbdd9;">HOME</div>
+                <div class="aboutme-tab" onclick="showContent('aboutme', event)" style="color: #8fbdd9;">ABOUT ME</div>
+                <div class="games-tab" onclick="showContent('games', event)" style="color: #8fbdd9;">GAMES</div>
+                <div class="edgerunners-tab" onclick="showContent('edgerunners', event)" style="color: #8fbdd9;">EDGERUNNERS</div>
+            </div>
+            <div id="home-content" class="tab-content">
+                <h2>Nathan Anjelo A. Barrameda's Personal Website </h2>
+                <p>This website is only for the sole purpose of ICT activity: personal website. Feel free to look
+                    around.</p>
+            </div>
+            <div id="aboutme-content" class="tab-content" style="display: none;">
+                <h1 style="color: #8fbdd9;">ABOUT ME</h1>
+                <p style="font-size: 15px;"><span id="personalid">Personal information</span>
+                    <br>
+                    Age: 17 years old
+                    <br>
+                    Birth date: September 29, 2006
+                    <br>
+                    Birthplace: Manila City, Philippines
+                    <br><br><br>
+                    <span id="educationalbg">Educational Background</span>
+                    <br>
+                    Las Pinas Elementary School Central (Primary)
+                    <br>
+                    Las Pinas National High School – Main (Junior High School)
+                    <br>
+                    Bernardo College (Senior High School)
+                    <br><br><br>
+                    <span id="hobbies">Hobbies</span>
+                    <br>
+                    Playing games
+                    <br>
+                    Reading
+                    <br>
+                    Listening to music
+                    <br>
+                    Cooking
+                    <br><br><br>
+                    <span id="interests">Interests</span>
+                    <br>
+                    Guitar
+                    <br>
+                    Acoustic Guitar
+                    <br>
+                    Books
+                    <br>
+                    Tranquility
+                </p>
+                </p>
+            </div>
+            <div id="games-content" class="tab-content" style="display: none;">
+                <h1 id="gamesheading" style="color: #8fbdd9;">GAMES</h1>
+                <p style="color: #8fbdd9;">These are <i>some</i> of the games I've collected and played over the past
+                    few years.</p>
+                <h2 id="steamgamesheading">STEAM GAMES</h2>
+                <div class="steamgames">
+                    <div class="lethalcomp">
+                        <img
+                            src="https://cdn.cloudflare.steamstatic.com/steam/apps/1966720/capsule_616x353.jpg?t=1700231592">
+                        <a href="https://store.steampowered.com/app/1966720/Lethal_Company/" target="_blank">
+                            <span id="lethaltext">
+                                Lethal Company
+                            </span>
+                        </a>
+                    </div>
+                    <div class="dontstarve">
+                        <img
+                            src="https://tryrolling.com/wp-content/uploads/2019/06/steamworkshop_webupload_previewfile_437795317_preview.png">
+                        <a href="https://store.steampowered.com/app/322330/Dont_Starve_Together/" target="_blank">
+                            <span id="dontstarvetext">
+                                Don't Starve Together
+                            </span>
+                        </a>
+                    </div>
+                    <div class="left4dead">
+
+                    </div>
+                </div>
+                <div class="epicgames">
+                    <h2 id="epicgamesheading">EPIC GAMES</h2>
+                    <div class="thehunter">
+                        <img src="https://i.ytimg.com/vi/VGOTYfGMyoE/maxresdefault.jpg">
+                        <a href="https://store.epicgames.com/en-US/p/honkai-star-rail">
+                            <span id="thehuntertext">
+                                theHunter: Call of the Wild
+                            </span>
+                        </a>
+                    </div>
+                    <div class="humanresourcemachine">
+                        <img
+                            src="https://cdn1.epicgames.com/offer/basil/EGS_HumanResourceMachine_TomorrowCorporation_S1_2560x1440-ea1281073444d2f46978ebe18b69f54a">
+                        <a href="https://store.epicgames.com/en-US/p/human-resource-machine" target="_blank">
+                            <span id="humanresourcetext">
+                                Human Resource Machine
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="edgerunners-content" class="tab-content" style="display: none;">
+                <h1 style="color: #8fbdd9;">Cyberpunk Edgerunners</h1>
+                <p style="text-align: justify">"Cyberpunk: Edgerunners" is an anime series set in the Cyberpunk universe
+                    created by Mike Pondsmith.
+                    It serves as a prequel to the Cyberpunk video game and takes place about a year before the events of
+                    the game. The series follows the story of a street kid named David who is trying to survive in Night
+                    City, a technology and body modification-obsessed city of the future. David attends the prestigious
+                    Arasaka Academy at his mother's behest, despite their financial struggle. Throughout the series,
+                    David faces various challenges and dangers in his quest for survival. The anime consists of 10
+                    episodes and explores the seedy underbelly of Night City, highlighting themes of poverty, death,
+                    degradation, and the pursuit of status in a dystopian society.</p><br>
+                <div class="favchars">
+                    <h2 style="color: #8fbdd9;">Favorite Characters</h2>
+                    <div class="lucy">
+                        <h3 style="color: #8fbdd9;">Lucyna Kushinada (Lucy)</h3>
+                        <div class="lucyimg">
+                            <img
+                                src="https://w.wallhaven.cc/full/85/wallhaven-8597yj.png">
+                        </div><br>
+                        <p style="text-align: justify">• <strong>Appearance</strong>: Lucy is a young woman with
+                            naturally white hair and red-purple eyes. She wears
+                            light red eye and lip makeup. Her hair is cut in a split bob, with her left side longer. She
+                            has a tall stature and pastel rainbow-dyed short hair.
+                            <br>
+                            • <strong>Abilities</strong>: Lucy is a prodigy when it comes to netrunning, which means she
+                            is highly skilled
+                            in hacking into computer systems and other people's implants.
+                            <br>
+                            • <strong>Role</strong>: Lucyna Kushinada is a character in the Cyberpunk world, and her
+                            role may vary
+                            depending on the specific story or game she appears in.
+                            <br><br>
+                            In some iterations of the Cyberpunk universe, Lucyna Kushinada is portrayed as David's
+                            lover. Their relationship adds a romantic and personal dimension to the storyline, impacting
+                            their decisions and interactions within the dystopian setting of Cyberpunk. This romantic
+                            involvement can shape their individual character development and influence the overall
+                            narrative arc.
+                        </p>
+                    </div><br>
+                    <div class="david">
+                        <h3 style="color: #8fbdd9;">David Martinez (David)</h3>
+                        <div class="davidimg">
+                            <img
+                                src="https://cdn.discordapp.com/attachments/1201041430727102494/1201579726456758282/wallhaven-m3gqk1.png?ex=65ca5553&is=65b7e053&hm=cf11c1fcbcf40a1bbfa717eff6133716019e830a49d088a7dafa5f4f2e36f3d5&">
+                        </div><br>
+                        <p style="text-align: justify;">
+                            • <strong>Background</strong>: David Martinez is a skilled and resourceful individual who often finds himself
+                            caught up in the dangerous and chaotic world of Cyberpunk. He has a mysterious past and is
+                            known for his ability to navigate through the treacherous streets of the dystopian city.
+                            <br>
+                            • <strong>Skills</strong>: David Martinez is proficient in combat and is skilled in a variety of weapons and
+                            combat techniques. He is also known for his expertise in hacking and manipulating
+                            technology, making him a formidable opponent in the cybernetic world.
+                            <br>
+                            • <strong>Role</strong>: David Martinez plays a significant role in the Cyberpunk storyline, often serving as a
+                            protagonist or anti-hero. His actions and decisions can have a profound impact on the
+                            narrative, shaping the outcome of the story.
+                            <br><br>
+                            Regarding his relationship with Lucy, it is worth noting that in some iterations of the
+                            Cyberpunk universe, David Martinez and Lucy (Lucyna Kushinada) are portrayed as lovers.
+                            Their relationship adds a romantic and personal dimension to the storyline, impacting their
+                            decisions and interactions within the dystopian setting of Cyberpunk. This romantic
+                            involvement can shape their individual character development and influence the overall
+                            narrative arc.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function showContent(tab, event) {
+        event.preventDefault();
+        var tabs = document.querySelectorAll('.navbar div');
+        tabs.forEach(function (tabElement) {
+            tabElement.classList.remove('active');
+        });
+        document.querySelector('.' + tab + '-tab').classList.add('active');
+        document.getElementById(tab + '-content').style.display = 'block';
+
+        var contents = document.querySelectorAll('.tab-content');
+        contents.forEach(function (content) {
+            if (content.id !== tab + '-content') {
+                content.style.display = 'none';
+            }
+        });
+    }
+    document.querySelectorAll('.navbar div').forEach(tab => {
+        tab.addEventListener('click', (event) => {
+            const tabId = tab.className.replace('-tab', '');
+            document.getElementById(`${tabId}-content`).style.display = 'block';
+        });
+    });
+    document.querySelector('.home-tab').classList.add('active');
+    document.getElementById('home-content').style.display = 'block';
+</script>
+
+</html>
